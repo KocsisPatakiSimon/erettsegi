@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int m,n;
+    cin>>m>>n;
+
+    long long A[100],B[100];
+    for(int i=0;i<100;i++) A[i]=B[i]=0;
+
+    for(int i=0;i<m;i++){
+        int x; cin>>x;
+        A[x]++;
+    }
+
+    for(int j=0;j<n;j++){
+        int y; cin>>y;
+        B[y]++;
+    }
+
+    long long parok=0;
+    for(int i=0;i<100;i++){
+        if(A[i]<B[i]) parok+=A[i];
+        else parok+=B[i];
+    }
+
+    cout<<parok;
+    return 0;
+}
